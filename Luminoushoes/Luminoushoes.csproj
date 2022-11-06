@@ -114,5 +114,8 @@
     <Resource Include="Assets\ShoeLogo.png" />
     <Resource Include="Assets\TextLogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Txb_Name.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
