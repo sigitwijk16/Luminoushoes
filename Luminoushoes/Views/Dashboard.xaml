@@ -1,0 +1,116 @@
+﻿<Window x:Class="Luminoushoes.Views.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Luminoushoes.Views"
+        mc:Ignorable="d" Title="Luminoushoes"
+        MinWidth="1366" 
+        MinHeight="768" 
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Maximized" 
+        WindowStyle="SingleBorderWindow" 
+        ResizeMode="CanResize">
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Assets/Luminoushoes.png"/>
+    </Window.Background>
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="pack://application:,,,/Assets/Btn_Idle.png"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="true">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="pack://application:,,,/Assets/Btn_Click.png" Stretch="Fill"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="Label">
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="0,3,10,0"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="89*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="#001B48" Margin="0,0,0,-5"/>
+            <Grid Grid.Column="1" Background="#aa871b5a"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="#001B48">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- <Grid Grid.Row="0" Background="#aacaedff" Margin="0,0,0,20"/> -->
+                <Button Name="BtnPlaceOrder" Grid.Column="0" Grid.Row="1" Margin="50,-10,50,20" Style="{StaticResource DropDown}">
+                    <Label Name="Order" Content="Place Order" Style="{StaticResource Menu_Label}"/>
+                </Button>
+                <Button x:Name="Btn_Promo" Grid.Column="0" Grid.Row="2" Margin="50,-5,50,15">
+                    <Label Content="Promos and News" Style="{StaticResource Menu_Label}"/>
+                </Button>
+                <Button x:Name="Btn_Tst" Grid.Column="0" Grid.Row="3" Margin="50,0,50,10">
+                    <Label Content="Transactions" Style="{StaticResource Menu_Label}"/>
+                </Button>
+                <Button x:Name="Btn_Account" Grid.Column="0" Grid.Row="4" Margin="50,5,50,5">
+                    <Label Content="Account" Grid.Column="0" Grid.Row="4" Style="{StaticResource Menu_Label}"/>
+                </Button>
+                <!--
+                <Grid Grid.Row="5"  Background="#aaff0000" Margin="50,0,50,0"/>
+                <Grid Grid.Row="6" Background="#aacaedff" Margin="50,0,50,0"/>
+                <Grid Grid.Row="7"  Background="#aaff0000" Margin="50,0,50,0"/>
+                <Grid Grid.Row="8" Background="#aacaedff" Margin="50,0,50,0"/>
+                <Grid Grid.Row="9"  Background="#aaff0000" Margin="50,0,50,0"/>
+                -->
+                <Button x:Name="Btn_Exit" Grid.Column="0" Grid.Row="10"  Margin="50,20,50,-10">
+                    <Label Content="Exit" Style="{StaticResource Menu_Label}"/>
+                </Button>
+                <!--
+                <Grid Grid.Row="11" Background="#aacaedff" Margin="50,10,50,0"/>
+                -->
+            </Grid>
+            <Grid Grid.Column="1" Background="#aa02457A"/>
+        </Grid>
+    </Grid>
+</Window>
