@@ -117,5 +117,8 @@
   <ItemGroup>
     <Resource Include="Assets\Txb_Name.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\BG.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

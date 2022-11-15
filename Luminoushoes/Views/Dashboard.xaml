@@ -12,7 +12,7 @@
         WindowStyle="SingleBorderWindow" 
         ResizeMode="CanResize">
     <Window.Background>
-        <ImageBrush ImageSource="pack://application:,,,/Assets/Luminoushoes.png"/>
+        <ImageBrush ImageSource="pack://application:,,,/Assets/BG.png"/>
     </Window.Background>
     <Window.Resources>
         <ResourceDictionary>
@@ -61,11 +61,11 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="8*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0"  Background="#001B48" Margin="0,0,0,-5">
+            <Grid Grid.Column="0">
                 <Image Source="pack://application:,,,/Assets/ShoeLogo.png" Margin="15,25,30,30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Image Source="pack://application:,,,/Assets/TextLogo.png" Margin="60,5,0,0" VerticalAlignment="Center" Width="250" Height="185"/>
             </Grid>
-            <Grid Grid.Column="1" Background="#02457A">
+            <Grid Grid.Column="1">
                 <Label Content="Clean Your Shoes" Margin="30,15,0,0" FontFamily="Quicksand" FontSize="36" FontWeight="Bold" Foreground="White"/>
             </Grid> 
         </Grid>
@@ -75,7 +75,7 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Background="#001B48">
+            <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -117,7 +117,7 @@
                 <Grid Grid.Row="11" Background="#aacaedff" Margin="50,10,50,0"/>
                 -->
             </Grid>
-            <Grid Grid.Column="1" Background="#02457A">
+            <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -139,16 +139,21 @@
                     <Label Content="Pickup Address" Margin="0,0,0,-10" Style="{StaticResource Content_Label}"/>
                 </Grid>
                 <Grid Grid.Row="2" Margin="60,-20,30,40">
-                    <TextBox x:Name="Txb_Name"/>
-                    <TextBlock Text="Input your name" Style="{StaticResource Label}"/>
+                    <TextBox x:Name="Txb_Name" Background="#03365D" Foreground="#aaffffff" Text="Input your name" BorderBrush="Transparent" TextWrapping="Wrap"/>
                 </Grid>
-                <Grid Grid.Row="3" Background="#aacaedff" Margin="60,-30,30,-30">
-                    <TextBox x:Name="Txb_Addr" MaxLines="20"/>
-                    <TextBlock Text="Input your address here" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+                <Grid Grid.Row="3" Margin="60,-30,30,-30">
+                    <TextBox x:Name="Txb_Addr" Background="#03365D" Text="Input your address here" Foreground="#aaffffff" BorderBrush="Transparent" TextWrapping="Wrap"/>
                 </Grid>
                 <!--<Grid Grid.Row="4"  Background="#aaff0000" Margin="40,0,10,0"/> -->
-                <Grid Grid.Row="5" Margin="50,15,350,0">
-                    <Label Content="Select Service" Style="{StaticResource Content_Label}"/>
+                <Grid Grid.Row="5" Margin="55,25,350,-10">
+                    <StackPanel Orientation="Vertical"> 
+                        <ComboBox Name="ComboBox1" IsEditable="True" HorizontalContentAlignment="Stretch" IsReadOnly="True" FontSize="14" Text="Select Service" VerticalAlignment="Center" Margin="0,0,-30,0">
+                            <ComboBoxItem>Reguler Surface Clean</ComboBoxItem>
+                            <ComboBoxItem>Express Surface Clean</ComboBoxItem>
+                            <ComboBoxItem>Reguler Deep Clean</ComboBoxItem>
+                            <ComboBoxItem>Express Deep Clean</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>	
                 </Grid>
                 <Grid Grid.Row="6">
                     <Grid.ColumnDefinitions>
@@ -159,15 +164,14 @@
                         <ColumnDefinition Width="0.3*"/>
                         <ColumnDefinition Width="5.8*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="1" Margin="-5,20,5,0">
+                    <Grid Grid.Column="1" Margin="0,20,5,-20">
                         <Label Content="Shoes Pair(s)" Style="{StaticResource Content_Label}"/>
                     </Grid>
                     <Grid Grid.Column="2" Margin="-5,20,0,0">
                         <Button Content="-"/>
                     </Grid>
                     <Grid Grid.Column="3" Margin="0,20,-5,0">
-                        <TextBox/>
-                        <TextBlock Text="Type" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Name="Type" Text="Type"/>
                     </Grid>
                     <Grid Grid.Column="4" Margin="5,20,-10,0">
                         <Button Content="+"/>
@@ -177,8 +181,7 @@
                     <Label Content="Payment Method" Style="{StaticResource Content_Label}"/>
                 </Grid>
                 <Grid Grid.Row="8" Margin="55,5,330,15">
-                    <TextBox x:Name="Procode" VerticalAlignment="Center"/>
-                    <TextBlock Text="Enter a promo code" Style="{StaticResource Label}"/>
+                    <TextBox x:Name="Procode" VerticalAlignment="Center" Text="Enter a promo code"/>
                 </Grid>
                 <!--<Grid Grid.Row="9" Background="#aacaedff" Margin="40,0,10,0"/>
                 <Grid Grid.Row="10"  Background="#aaff0000" Margin="40,0,10,0"/>
@@ -186,7 +189,7 @@
                 <Grid Grid.Row="12"  Background="#aaff0000" Margin="40,0,10,0"/>
                 <Grid Grid.Row="13" Background="#aacaedff" Margin="40,0,10,0"/>-->
             </Grid>
-            <Grid Grid.Column="2" Background="#02457A">
+            <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -212,21 +215,19 @@
                         <Label Content="Same as Delivery Address" FontSize="12" Margin="-5,0,-10,-5" Style="{StaticResource Content_Label}"/>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="2"  Background="#aaff0000" Margin="30,-20,50,40">
-                    <TextBox Name="EtrName2"/>
-                    <TextBlock Text="Input recipient name" Style="{StaticResource Label}"/>
+                <Grid Grid.Row="2" Margin="30,-20,50,40">
+                    <TextBox Name="EtrName2" Background="#03365D" Text="Input recipient name" Foreground="#aaffffff" BorderBrush="Transparent" TextWrapping="Wrap"/>
                 </Grid>
                 <Grid Grid.Row="3" Background="#aacaedff" Margin="30,-30,50,-30">
-                    <TextBox x:Name="DevAdr"/>
-                    <TextBlock Text="Input your delivery address here" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+                    <TextBox x:Name="DevAdr" Text="Input your delivery address here" Foreground="#aaffffff" Background="#03365D" BorderBrush="Transparent" TextWrapping="Wrap"/>
                 </Grid>
                 <!--<Grid Grid.Row="4"  Background="#aaff0000" Margin="40,0,10,0"/> -->
                 <Grid Grid.Row="5" Margin="30,20,360,5">
                     <Label Content="Write Down a Note" Margin="-5,-5,0,0" Style="{StaticResource Content_Label}">
                     </Label>
                 </Grid>
-                <Grid Grid.Row="6"  Background="#aaff0000" Margin="30,0,50,-70">
-                    <TextBox x:Name="WriteNote"/>
+                <Grid Grid.Row="6" Margin="30,0,50,-70">
+                    <TextBox x:Name="WriteNote" Foreground="#aaffffff" Background="#03365D" BorderBrush="Transparent" TextWrapping="Wrap"/>
                 </Grid>
                 <!--<Grid Grid.Row="7" Background="#aacaedff" Margin="50,20,320,0"/>
                 <Grid Grid.Row="8"  Background="#aaff0000" Margin="55,5,330,10"/> -->
@@ -257,7 +258,7 @@
                         <Label Content="Rp.xxx" HorizontalAlignment="Right" FontSize="12" FontWeight="Medium" Margin="0,-5,0,-10" Style="{StaticResource Content_Label}"/>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="13" Margin="390,-40,50,45">
+                <Grid Grid.Row="13" Margin="400,-40,50,45">
                     <Button x:Name="PayNow" FontSize="20" FontWeight="DemiBold">
                         <Border Background="#018ABE" CornerRadius="10"/>
                     </Button>
